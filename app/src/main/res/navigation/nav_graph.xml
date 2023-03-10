@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Pioche_Nav">
+
+    <fragment
+        android:id="@+id/FirstPlayer_Nav"
+        android:name="com.example.evalution_formative_08_2713413.FirstPlayer"
+        android:label="@string/first_Player"
+        tools:layout="@layout/first_player_fragment">
+        <action
+            android:id="@+id/action_FirstPlayer_to_pioche"
+            app:destination="@id/Pioche_Nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondPlayer_Nav"
+        android:name="com.example.evalution_formative_08_2713413.SecondPlayer"
+        android:label="@string/second_Player"
+        tools:layout="@layout/second_player_fragment">
+        <action
+            android:id="@+id/action_SecondPlayer_to_pioche"
+            app:destination="@id/Pioche_Nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/Pioche_Nav"
+        android:name="com.example.evalution_formative_08_2713413.Pioche"
+        android:label="@string/pioche"
+        tools:layout="@layout/pioche_fragment">
+        <action
+            android:id="@+id/action_pioche_to_SecondPlayer"
+            app:destination="@id/SecondPlayer_Nav" />
+        <action
+            android:id="@+id/action_pioche_to_FirstPlayer"
+            app:destination="@id/FirstPlayer_Nav" />
+    </fragment>
+</navigation>
