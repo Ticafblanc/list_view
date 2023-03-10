@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/Pioche_Nav">
+    app:startDestination="@id/game">
 
     <fragment
         android:id="@+id/FirstPlayer_Nav"
@@ -11,8 +11,8 @@
         android:label="@string/first_Player"
         tools:layout="@layout/first_player_fragment">
         <action
-            android:id="@+id/action_FirstPlayer_to_pioche"
-            app:destination="@id/Pioche_Nav" />
+            android:id="@+id/action_FirstPlayer_Nav_to_game"
+            app:destination="@id/game" />
     </fragment>
     <fragment
         android:id="@+id/SecondPlayer_Nav"
@@ -20,8 +20,8 @@
         android:label="@string/second_Player"
         tools:layout="@layout/second_player_fragment">
         <action
-            android:id="@+id/action_SecondPlayer_to_pioche"
-            app:destination="@id/Pioche_Nav" />
+            android:id="@+id/action_SecondPlayer_Nav_to_game"
+            app:destination="@id/game" />
     </fragment>
     <fragment
         android:id="@+id/Pioche_Nav"
@@ -29,10 +29,22 @@
         android:label="@string/pioche"
         tools:layout="@layout/pioche_fragment">
         <action
-            android:id="@+id/action_pioche_to_SecondPlayer"
+            android:id="@+id/action_Pioche_Nav_to_game"
+            app:destination="@id/game" />
+    </fragment>
+    <fragment
+        android:id="@+id/game"
+        android:name="com.example.evalution_formative_08_2713413.Game"
+        android:label="game_fragment"
+        tools:layout="@layout/game_fragment" >
+        <action
+            android:id="@+id/action_game_to_Pioche_Nav"
+            app:destination="@id/Pioche_Nav" />
+        <action
+            android:id="@+id/action_game_to_SecondPlayer_Nav"
             app:destination="@id/SecondPlayer_Nav" />
         <action
-            android:id="@+id/action_pioche_to_FirstPlayer"
+            android:id="@+id/action_game_to_FirstPlayer_Nav"
             app:destination="@id/FirstPlayer_Nav" />
     </fragment>
 </navigation>
